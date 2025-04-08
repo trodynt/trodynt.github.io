@@ -73,7 +73,6 @@
     background: var(--card-bg);
     color: var(--text-light);
     white-space: normal;
-    cursor: default;
   }
 
   .profile-img {
@@ -125,20 +124,13 @@
   }
 
   .list-group-flush > .list-group-item:first-child {
-    border-top: none;
+    border-top: 1px solid var(--divider-color) !important;
   }
 
-  /* NEW: Smooth bold hover for all text in card */
-  .card *:not(i) {
-    transition: font-weight 0.3s ease, color 0.3s ease;
-    font-weight: 400;
-  }
-
-  .card:hover *:not(i) {
-    font-weight: 700;
+  .list-group-flush > .list-group-item:last-child {
+    border-bottom: 1px solid var(--divider-color) !important;
   }
 </style>
-
 
 </head>
 <body>
