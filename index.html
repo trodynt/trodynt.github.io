@@ -10,129 +10,139 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    :root {
-      --wine: #7c1637;
-      --deep-wine: #5a0f27;
-      --bg-dark: #1c0f11;
-      --card-bg: #2a171b;
-      --text-light: #f3f3f3;
-      --text-muted: #cbbaba;
-      --divider-color: #5a0f27;
-    }
+  :root {
+    --wine: #7c1637;
+    --deep-wine: #5a0f27;
+    --bg-dark: #1c0f11;
+    --card-bg: #2a171b;
+    --text-light: #f3f3f3;
+    --text-muted: #cbbaba;
+    --divider-color: #5a0f27;
+  }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      overflow: hidden;
-    }
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow: hidden;
+    cursor: default;
+  }
 
-    br {
-      display: none;
-    }
+  br, hr, .custom-divider {
+    display: block;
+    border: none;
+    background-color: var(--divider-color);
+    height: 1px;
+    opacity: 1;
+    margin: 1rem 0;
+  }
 
-    .background-pattern {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 40px 35px;
-      z-index: -1;
-      animation: movePattern 60s linear infinite;
-      opacity: 0.12;
-    }
+  .background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 35px;
+    z-index: -1;
+    animation: movePattern 60s linear infinite;
+    opacity: 0.12;
+  }
 
-    @keyframes movePattern {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-100px); }
-    }
+  @keyframes movePattern {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+  }
 
-    .card-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 1rem;
-    }
+  .card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+  }
 
-    .card {
-      display: inline-block;
-      padding: 1rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-      background: var(--card-bg);
-      color: var(--text-light);
-      white-space: normal;
-    }
+  .card {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    background: var(--card-bg);
+    color: var(--text-light);
+    white-space: normal;
+    cursor: default;
+  }
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-top: -60px;
-      border: 5px solid var(--card-bg);
-    }
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -60px;
+    border: 5px solid var(--card-bg);
+  }
 
-    .social-icons a {
-      margin: 0 10px;
-      color: var(--text-light);
-      font-size: 20px;
-      transition: color 0.3s, transform 0.3s;
-    }
+  .social-icons a {
+    margin: 0 10px;
+    color: var(--text-light);
+    font-size: 20px;
+    transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
 
-    .social-icons a:hover {
-      color: var(--deep-wine);
-      transform: scale(1.2);
-    }
+  .social-icons a:hover {
+    color: var(--deep-wine);
+    transform: scale(1.2);
+  }
 
-    .btn-subscribe {
-      background-color: #FF0000;
-      color: white;
-      border: none;
-    }
+  .btn-subscribe {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+  }
 
-    .btn-subscribe:hover {
-      background-color: #cc0000;
-    }
+  .btn-subscribe:hover {
+    background-color: #cc0000;
+  }
 
-    .bg-wine {
-      background-color: var(--wine) !important;
-      color: white;
-    }
+  .bg-wine {
+    background-color: var(--wine) !important;
+    color: white;
+  }
 
-    .text-muted {
-      color: var(--text-muted) !important;
-    }
+  .text-muted {
+    color: var(--text-muted) !important;
+  }
 
-    .card *:not(i) {
-      transition: font-weight 0.3s ease;
-    }
+  /* Only list items hover bold, rest don't */
+  .list-group-item {
+    background-color: transparent;
+    border-color: var(--divider-color) !important;
+    color: var(--text-light);
+    transition: font-variation-settings 0.3s ease;
+    font-variation-settings: "wght" 400;
+    cursor: default;
+  }
 
-    .card *:not(i):hover {
-      font-weight: bold;
-    }
+  .list-group-item:hover {
+    font-variation-settings: "wght" 700;
+  }
 
-    .list-group-item {
-      background-color: transparent;
-      border-color: var(--divider-color) !important;
-      color: var(--text-light);
-    }
+  .list-group-flush > .list-group-item:first-child {
+    border-top: none;
+  }
 
-    .list-group-flush > .list-group-item:first-child {
-      border-top: none;
-    }
+  /* Optional: card hover text fix (disabled) */
+  .card *:not(i) {
+    transition: none;
+    cursor: default;
+  }
 
-    .custom-divider {
-      height: 1px;
-      background-color: var(--divider-color);
-      margin: 1rem 0;
-    }
-  </style>
+</style>
+
 </head>
 <body>
   <div class="background-pattern"></div>
