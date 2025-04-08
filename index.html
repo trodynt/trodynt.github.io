@@ -31,12 +31,12 @@
   }
 
   br, hr, .custom-divider {
-    display: block;
+    display: none;
+    height: 0;
     border: none;
-    background-color: var(--divider-color);
-    height: 1px;
-    opacity: 1;
-    margin: 1rem 0;
+    background: transparent;
+    margin: 0;
+    opacity: 0;
   }
 
   .background-pattern {
@@ -73,6 +73,7 @@
     background: var(--card-bg);
     color: var(--text-light);
     white-space: normal;
+    cursor: default;
   }
 
   .profile-img {
@@ -130,7 +131,7 @@
   .list-group-flush > .list-group-item:last-child {
     border-bottom: 1px solid var(--divider-color) !important;
   }
-</style>
+  </style>
 
 </head>
 <body>
@@ -147,8 +148,6 @@
       </div>
 
       <p class="px-3">Hey there! I'm a YouTuber making awesome content every week. Join the squad!</p>
-
-      <div class="custom-divider"></div>
 
       <h5 class="mt-4">Latest Videos</h5>
       <ul class="list-group list-group-flush mb-3">
