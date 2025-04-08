@@ -33,7 +33,7 @@
   br, hr, .custom-divider {
     display: block;
     border: none;
-    background-color: #5A0F27;
+    background-color: var(--divider-color);
     height: 1px;
     opacity: 1;
     margin: 1rem 0;
@@ -118,29 +118,27 @@
   }
 
   .list-group-item {
-  background-color: transparent;
-  border-color: var(--divider-color) !important;
-  color: var(--text-light);
-  transition: font-weight 0.3s ease;
-  font-weight: 400;
-  cursor: default;
-  }
-  
-  .list-group-item:hover {
-    font-weight: 700;
+    background-color: transparent;
+    border-color: var(--divider-color) !important;
+    color: var(--text-light);
+    font-weight: 400;
   }
 
   .list-group-flush > .list-group-item:first-child {
     border-top: none;
   }
 
-  /* Optional: card hover text fix (disabled) */
+  /* NEW: Smooth bold hover for all text in card */
   .card *:not(i) {
-    transition: none;
-    cursor: default;
+    transition: font-weight 0.3s ease, color 0.3s ease;
+    font-weight: 400;
   }
 
+  .card:hover *:not(i) {
+    font-weight: 700;
+  }
 </style>
+
 
 </head>
 <body>
