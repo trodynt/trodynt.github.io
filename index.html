@@ -33,7 +33,7 @@
   br, hr, .custom-divider {
     display: block;
     border: none;
-    background-color: var(--divider-color);
+    background-color: #5A0F27;
     height: 1px;
     opacity: 1;
     margin: 1rem 0;
@@ -117,18 +117,17 @@
     color: var(--text-muted) !important;
   }
 
-  /* Only list items hover bold, rest don't */
   .list-group-item {
-    background-color: transparent;
-    border-color: var(--divider-color) !important;
-    color: var(--text-light);
-    transition: font-variation-settings 0.3s ease;
-    font-variation-settings: "wght" 400;
-    cursor: default;
+  background-color: transparent;
+  border-color: var(--divider-color) !important;
+  color: var(--text-light);
+  transition: font-weight 0.3s ease;
+  font-weight: 400;
+  cursor: default;
   }
-
+  
   .list-group-item:hover {
-    font-variation-settings: "wght" 700;
+    font-weight: 700;
   }
 
   .list-group-flush > .list-group-item:first-child {
