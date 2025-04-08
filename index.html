@@ -59,13 +59,13 @@
     }
 
     .card {
-      width: 100%;
-      max-width: 400px;
+      display: inline-block;
+      padding: 1rem;
       border-radius: 20px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.4);
       background: var(--card-bg);
       color: var(--text-light);
-      overflow: hidden;
+      white-space: normal;
     }
 
     .profile-img {
@@ -108,7 +108,7 @@
       color: var(--text-muted) !important;
     }
 
-    /* Smooth bold transition globally */
+    /* 🔥 Smooth bold transition only on hovered item */
     .card *:not(i) {
       transition: font-weight 0.3s ease;
     }
@@ -127,18 +127,11 @@
       border-top: none;
     }
 
-    /* Replace <br> with a line styled like list group dividers */
+    /* Custom horizontal rule to match list divider color */
     .custom-divider {
       height: 1px;
       background-color: var(--divider-color);
       margin: 1rem 0;
-    }
-
-    /* No text wrapping, no horizontal card stretch */
-    .no-wrap {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   </style>
 </head>
@@ -146,18 +139,18 @@
   <div class="background-pattern"></div>
 
   <div class="card-container">
-    <div class="card text-center p-4">
+    <div class="card text-center">
       <img src="https://cdn.discordapp.com/attachments/1136772909159940107/1359022190871187578/48980edb6290ffbd837b5c0954f4d9df.png?ex=67f5f78b&is=67f4a60b&hm=4cbee6087ef672d8b67e32d5e55229c73a24c2c21d8a2c2479ab6cc59338f7bc&" alt="Profile Image" class="profile-img mx-auto">
-      <h3 class="mt-3 no-wrap">TRODYNT</h3>
-      <p class="text-muted no-wrap">HE/HIM | V TUBER | STREAMER | ESTP</p>
+      <h3 class="mt-3">TRODYNT</h3>
+      <p class="text-muted">HE/HIM | V TUBER | STREAMER | ESTP</p>
       
       <div class="mb-2">
         <span class="badge bg-wine">follow me for wine and cookies~</span>
       </div>
 
-      <p class="px-3 no-wrap">Hey there! I'm a YouTuber making awesome content every week. Join the squad!</p>
+      <p class="px-3">Hey there! I'm a YouTuber making awesome content every week. Join the squad!</p>
 
-      <!-- Divider instead of <br> -->
+      <!-- 👇 Instead of <br> -->
       <div class="custom-divider"></div>
 
       <h5 class="mt-4">Latest Videos</h5>
