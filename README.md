@@ -1,1 +1,0 @@
-# trodynt.github.io
